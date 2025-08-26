@@ -8,7 +8,12 @@
 
 [![AHK Version](https://img.shields.io/badge/AHK%20Version-v2-green)](https://www.autohotkey.com/docs/v2/)
 [![Release](https://img.shields.io/github/v/release/sebinside/HotkeylessAHK)](https://github.com/sebinside/HotkeylessAHK/releases)
-[![AHK Version](https://img.shields.io/badge/Elgato%20Stream%20Deck%20Plugin-Available-purple)](https://github.com/sebinside/HotkeylessAHK?tab=readme-ov-file#elgato-stream-deck-plugin)
+[![Stream Deck](https://img.shields.io/badge/Elgato%20Stream%20Deck%20Plugin-Available-purple)](https://github.com/sebinside/HotkeylessAHK?tab=readme-ov-file#elgato-stream-deck-plugin)
+
+TL;DR: **HotkeylessAHK** enables a simple, fast, and scalable way to call AutoHotkey functions over the network and from your own computer without requiring hotkeys or a vast number of small scripts:
+
+![Overview](figure-light.png#gh-light-mode-only)
+![Overview](figure-dark.png#gh-dark-mode-only)
 
 The **AutoHotkey** (AHK) environment is a *powerful tool* to enhance your productivity and *speed up your workflow*. There are so many possibilities and use cases that sometimes... you might *run out of hotkeys*. Or you might want to *combine* AHK-scripts or trigger them from different sources or even from other computers in your local network.
 
@@ -28,7 +33,7 @@ until you loose track of all your AHK files. Additionally, how can you live with
 
 You can make your own *performance tests*. Just have a look at the `performance-tests`-folder!
 
-Also, **Hotkeyless AutoHotkey** enables the execution of AutoHotkey code from other computers in the same local network. And we also provide a complementary **Elgato Stream Deck** plugin, that enables calling AHK code by simply pressing a button (and without cluttering up your shortcut list).
+Also, **Hotkeyless AutoHotkey** enables the execution of AutoHotkey code from other computers in the same local network. And we also provide a complementary **Elgato Stream Deck** plugin, that enables calling AHK code by simply pressing a button (and without cluttering up your shortcut list). 
 
 ## Functionality, in a nutshell
 
