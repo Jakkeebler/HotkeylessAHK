@@ -1,11 +1,12 @@
-﻿#Requires AutoHotkey v2.0
+#Requires AutoHotkey v2.0
 SendMode("Input")
 SetWorkingDir(A_ScriptDir)
 TraySetIcon("files\icon.ico")
 A_IconTip := "HotkeylessAHK"
 #SingleInstance force
 #Include files\lib.ahk
-
+#Include Common\sharedfunctions.ahk
+#Include Valhalla\workspaces.ahk
 ; HotkeylessAHK by sebinside
 ; ALL INFORMATION: https://github.com/sebinside/HotkeylessAHK
 ; Make sure that you have downloaded everything, especially the "/files" folder.
@@ -25,7 +26,8 @@ RunClient(serverPort, functionClassNames)
 ; You can then call them by using the URL "localhost:<serverPort>/send/<functionName>"
 ; The function name "kill" is reserved.
 
-Class CustomFunctions {
+class CustomFunctions {
+	; Original Functions
     HelloWorld() {
         MsgBox "Hello, World!"
     }
@@ -38,4 +40,30 @@ Class CustomFunctions {
     FunctionWithParams(param1, param2) { 
         MsgBox "Param1: " . param1 . "`nParam2: " . param2
     }
+
+	; Common Functions
+	KillAllScripts() {
+		ExitApp
+		ToolTip "All Scripts Killed"
+		Sleep 3000
+		ToolTip
+		Sleep 2000
+		return
+	}
+
+	ReloadScript() {
+		Reload
+		return
+	}
+	
+	; Valhalla Functions
+	Valhalla_HelloWorld2() {
+		HelloWorld2()
+	}
+
+	Valhalla_EndWork() {
+		EndWork()
+	}
 }
+
+
