@@ -56,13 +56,19 @@ class CustomFunctions {
 		return
 	}
 	
-	; Valhalla Functions
+	; Valhalla Functions ---------------------------------------------------------
 	Valhalla_HelloWorld2() {
 		HelloWorld2()
 	}
-
+	
+	; Valhalla - Work Functions --------------------------------------------------
 	Valhalla_EndWork() {
 		EndWork()
+	}
+
+	; Valhalla - Workspace Functions ---------------------------------------------
+	Valhalla_DigitalMuse_Etsy() {
+		DigitalMuse_Etsy()
 	}
 }
 
