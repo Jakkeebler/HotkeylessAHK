@@ -6,7 +6,7 @@ A_IconTip := "HotkeylessAHK"
 #SingleInstance force
 #Include files\lib.ahk
 #Include Common\sharedfunctions.ahk
-#Include Valhalla\workspaces.ahk
+#Include Valhalla\Vallhalla_Main.ahk
 ; HotkeylessAHK by sebinside
 ; ALL INFORMATION: https://github.com/sebinside/HotkeylessAHK
 ; Make sure that you have downloaded everything, especially the "/files" folder.
@@ -69,6 +69,15 @@ class CustomFunctions {
 	; Valhalla - Workspace Functions ---------------------------------------------
 	Valhalla_DigitalMuse_Etsy() {
 		DigitalMuse_Etsy()
+	}
+
+	Valhalla_Firefox_GeminiChatGPT() {
+		Workspace_Firefox_GeminiChatGPT()
+	}
+
+	; Valhalla - Action Functions ------------------------------------------------
+	Valhalla_CodexApprove() {
+		Action_CodexApprove()
 	}
 }
 

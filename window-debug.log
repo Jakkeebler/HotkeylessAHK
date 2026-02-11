@@ -1,0 +1,9 @@
+﻿2026-02-08 14:47:11 | hwnd=2753112 | monitorWorkArea=(0,0,7680,2100) | target=(5760,0,1920,2100) | before=(10323,325,1550,1688) | after=(5760,0,2400,2625) | state=0
+2026-02-08 14:53:25 | hwnd=8916942 | mainScreenArea=(0,0,7680,2160) | target=(5760,0,1920,2160) | before=(10323,325,1550,1688) | after=(5760,0,2400,2700) | state=0
+2026-02-08 14:54:37 | hwnd=2035412 | mainScreenArea=(0,0,7680,2160) | target=(5760,0,1920,2160) | before=(5765,13,1938,2110) | after=(5760,0,1920,2160) | state=0
+2026-02-08 16:17:21 | FIREFOX | targetMonitorWorkArea=(5029,-1350,7429,-60) | chatgptTarget=(5029,-1350,1200,1290) | geminiTarget=(6229,-1350,1200,1290)
+2026-02-08 16:17:25 | FIREFOX | ChatGPT | hwnd=1052656 | target=(5029,-1350,1200,1290) | after=(5029,-1350,1200,1290) | state=0 | status=ok
+2026-02-08 16:17:26 | FIREFOX | Gemini | hwnd=4590660 | target=(6229,-1350,1200,1290) | after=(6229,-1350,1200,1290) | state=0 | status=ok
+2026-02-08 16:17:49 | FIREFOX | targetMonitorWorkArea=(5029,-1350,7429,-60) | chatgptTarget=(5029,-1350,1200,1290) | geminiTarget=(6229,-1350,1200,1290)
+2026-02-08 16:17:50 | FIREFOX | ChatGPT | hwnd=26546170 | target=(5029,-1350,1200,1290) | after=(5029,-1350,1200,1290) | state=0 | status=ok
+2026-02-08 16:17:51 | FIREFOX | Gemini | hwnd=2164778 | target=(6229,-1350,1200,1290) | after=(6229,-1350,1200,1290) | state=0 | status=ok
