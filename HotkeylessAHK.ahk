@@ -7,6 +7,7 @@ A_IconTip := "HotkeylessAHK"
 #Include files\lib.ahk
 #Include Common\sharedfunctions.ahk
 #Include Valhalla\Vallhalla_Main.ahk
+#Include Prompts\Gemini.ahk
 ; HotkeylessAHK by sebinside
 ; ALL INFORMATION: https://github.com/sebinside/HotkeylessAHK
 ; Make sure that you have downloaded everything, especially the "/files" folder.
@@ -79,6 +80,12 @@ class CustomFunctions {
 	Valhalla_CodexApprove() {
 		Action_CodexApprove()
 	}
+
+	; Gemini - Prompts -----------------------------------------------------------
+	Gemini_HeroMultiAligned(imageCount := "") {
+		return Gemini_HeroMultiAlignedPrompt(imageCount)
+	}
+
 }
 
 
