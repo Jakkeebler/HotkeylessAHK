@@ -82,6 +82,14 @@ class CustomFunctions {
 	}
 
 	; Gemini - Prompts -----------------------------------------------------------
+	; Single Piece - Aligned -----------------------------------------------------
+	Gemini_Statement18x24(roomTheme := "") {
+		return Gemini_Statement18x24Prompt(roomTheme)
+	}
+
+	Gemini_StatementFlexible(roomTheme := "") {
+		return Gemini_StatementFlexiblePrompt(roomTheme)
+	}
 	; Multi Piece - Aligned ------------------------------------------------------
 	Gemini_HeroMultiAligned(imageCount := "") {
 		return Gemini_HeroMultiAlignedPrompt(imageCount)
@@ -99,8 +107,8 @@ class CustomFunctions {
 		return Gemini_LivingMultiAlignedPrompt(imageCount)
 	}
 
-	Gemini_StatementMultiAligned(imageCount := "") {
-		return Gemini_StatementMultiAlignedPrompt(imageCount)
+	Gemini_StatementMultiAligned(imageCount := "", roomTheme := "") {
+		return Gemini_StatementMultiAlignedPrompt(imageCount, roomTheme)
 	}
 
 	; Multi Piece - Staggered ---------------------------------------------------
@@ -120,8 +128,8 @@ class CustomFunctions {
 		return Gemini_LivingMultiStaggeredPrompt(imageCount)
 	}
 
-	Gemini_StatementMultiStaggered(imageCount := "") {
-		return Gemini_StatementMultiStaggeredPrompt(imageCount)
+	Gemini_StatementMultiStaggered(imageCount := "", roomTheme := "") {
+		return Gemini_StatementMultiStaggeredPrompt(imageCount, roomTheme)
 	}
 }
 

@@ -1,3 +1,201 @@
+; Single Piece -----------------------------------------
+; Statement - 18x24
+Gemini_Statement18x24Prompt(roomTheme := "") {
+	if (roomTheme = "") {
+		themeIb := InputBox("Enter the room theme to insert into the prompt.", "Gemini Prompt", "w500 h140")
+		if (themeIb.Result != "OK") {
+			return false
+		}
+
+		roomTheme := Trim(themeIb.Value)
+	}
+
+	if (roomTheme = "") {
+		MsgBox("Please enter a room theme.", "Gemini Prompt", "Icon!")
+		return false
+	}
+
+	template := "
+(
+Use the attached image as the exact artwork displayed in the frame.
+
+The artwork must remain completely unchanged:
+- No color changes
+- No cropping
+- No stretching
+- No warping
+- No perspective distortion
+- No style reinterpretation
+
+Preserve the artwork’s original aspect ratio exactly.
+The frame opening must match the artwork’s exact proportions.
+
+Create a dramatic, high-impact statement-room mockup where the environment complements the artwork.
+
+Inspiration:
+- Take inspiration from the artwork’s mood or color palette
+- The artwork itself must remain geometrically accurate
+
+Room Theme:
+INSERT_THEME
+
+Environment:
+- The room design must clearly reflect the chosen Room Theme
+- Loft, gallery-style room, or expressive interior consistent with the theme
+- Background elements must not overlap or block the artwork
+- No additional wall art
+
+Frame:
+- Modern frame with realistic depth
+- Matte finish
+- Subtle realistic shadow
+
+Placement:
+- Artwork prominently centered
+- Frame aligned flat against the wall
+- Camera straight-on or very slightly angled
+- Artwork must remain perfectly rectangular
+- Vertical and horizontal edges must remain parallel
+- No lens distortion affecting the artwork plane
+
+Lighting:
+- Cinematic room lighting appropriate to the Room Theme
+- Artwork remains evenly lit and fully visible
+- No glare or reflection
+
+Composition:
+- Square (1:1) output
+- Full framed artwork fully visible
+- Artwork is the clear focal point
+- Dramatic editorial interior composition
+
+Style:
+- Ultra realistic editorial interior photography
+- No text
+- No people
+- No logos
+- No watermarks
+)"
+
+	promptText := StrReplace(template, "INSERT_THEME", roomTheme)
+
+	clipSaved := ClipboardAll()
+	try {
+		A_Clipboard := promptText
+		if (!ClipWait(1)) {
+			MsgBox("Could not set clipboard for paste.", "Gemini Prompt", "Icon!")
+			return false
+		}
+
+		Send("^v")
+		Sleep(100)
+	} finally {
+		A_Clipboard := clipSaved
+	}
+
+	return true
+}
+
+; Statement - Flexible
+Gemini_StatementFlexiblePrompt(roomTheme := "") {
+	if (roomTheme = "") {
+		themeIb := InputBox("Enter the room theme to insert into the prompt.", "Gemini Prompt", "w500 h140")
+		if (themeIb.Result != "OK") {
+			return false
+		}
+
+		roomTheme := Trim(themeIb.Value)
+	}
+
+	if (roomTheme = "") {
+		MsgBox("Please enter a room theme.", "Gemini Prompt", "Icon!")
+		return false
+	}
+
+	template := "
+(
+Use the attached image as the exact artwork displayed in the frame.
+
+Do NOT alter the artwork in any way.
+- No color changes
+- No cropping
+- No stretching
+- No warping
+- No perspective distortion
+- No style reinterpretation
+
+Preserve the artwork’s original aspect ratio exactly.
+The frame opening must match the artwork’s exact proportions.
+
+Create a dramatic, high-impact statement-room mockup where the environment complements the artwork.
+
+Inspiration:
+- Take inspiration from the artwork’s mood, color palette, or energy
+- The room design may echo the artwork’s style or emotion
+- The artwork itself must remain unchanged and geometrically accurate
+
+Room Theme:
+INSERT_THEME
+
+Environment:
+- The room design must clearly reflect the chosen Room Theme
+- Expressive atmosphere without overpowering the artwork
+- No additional wall art
+- Background elements must not overlap or block the artwork
+
+Frame:
+- Modern frame with realistic depth
+- Matte finish
+- Subtle realistic shadow
+
+Placement:
+- Artwork displayed prominently and centered
+- Frame aligned flat against the wall
+- Camera straight-on or very slightly angled
+- Artwork must remain perfectly rectangular
+- Vertical and horizontal edges must remain parallel
+- No lens distortion affecting the artwork plane
+
+Lighting:
+- Cinematic or moody lighting appropriate to the Room Theme
+- Artwork remains well-lit and fully visible
+- No glare or reflection on artwork surface
+
+Composition:
+- Square (1:1) aspect ratio
+- Full framed artwork fully visible
+- Artwork is the clear focal point
+- Dramatic but balanced editorial composition
+
+Style:
+- Ultra realistic
+- Editorial or gallery-style interior photography
+- No text
+- No people
+- No logos
+- No watermarks
+
+)"
+
+	promptText := StrReplace(template, "INSERT_THEME", roomTheme)
+
+	clipSaved := ClipboardAll()
+	try {
+		A_Clipboard := promptText
+		if (!ClipWait(1)) {
+			MsgBox("Could not set clipboard for paste.", "Gemini Prompt", "Icon!")
+			return false
+		}
+
+		Send("^v")
+		Sleep(100)
+	} finally {
+		A_Clipboard := clipSaved
+	}
+
+	return true
+}
+
 ; Multi Piece - Aligned ---------------------------------
 ; Hero - Multi Piece - Aligned
 Gemini_HeroMultiAlignedPrompt(imageCount := "") {
@@ -420,7 +618,7 @@ If more than NUMBER frames appear, or any frame is resized, tilted, duplicated, 
 }
 
 ; Statement - Multi Piece - Aligned
-Gemini_StatementMultiAlignedPrompt(imageCount := "") {
+Gemini_StatementMultiAlignedPrompt(imageCount := "", roomTheme := "") {
 	if (imageCount = "") {
 		ib := InputBox("How many attached images should be referenced?", "Gemini Prompt", "w340 h140", "3")
 		if (ib.Result != "OK") {
@@ -435,11 +633,25 @@ Gemini_StatementMultiAlignedPrompt(imageCount := "") {
 		return false
 	}
 
+	if (roomTheme = "") {
+		themeIb := InputBox("Enter the room theme to insert into the prompt.", "Gemini Prompt", "w500 h140")
+		if (themeIb.Result != "OK") {
+			return false
+		}
+
+		roomTheme := Trim(themeIb.Value)
+	}
+
+	if (roomTheme = "") {
+		MsgBox("Please enter a room theme.", "Gemini Prompt", "Icon!")
+		return false
+	}
+
 	template := "
 (
-Use the NUMBER attached images as the exact artworks displayed in the frames.
+Use the Number attached images as the exact artworks displayed in the frames.
 
-Exactly NUMBER framed artworks must be shown.
+Exactly Number framed artworks must be shown.
 Do not add extra frames.
 Do not duplicate any artwork.
 Each artwork must appear once and only once.
@@ -455,21 +667,24 @@ Each artwork must remain completely unchanged:
 Preserve each artwork’s original aspect ratio exactly.
 Each frame opening must match its artwork’s exact proportions.
 
-Create a dramatic, high-impact statement-room mockup featuring the NUMBER artworks aligned horizontally.
+Create a dramatic, high-impact statement-room mockup featuring the Number artworks aligned horizontally.
 
 Inspiration:
 - Take inspiration from the artwork’s dreamy pastel tones and soft glow
 - The environment should complement the mood without overpowering the artwork
 - The artwork must remain geometrically accurate
 
+Room Theme:
+INSERT_THEME
+
 Environment:
-- Loft, gallery-style room, or elevated creative studio
-- Expressive atmosphere (textured wall, subtle architectural interest)
+- The room design must clearly reflect the chosen Room Theme
+- Expressive atmosphere with layered lighting and subtle depth
 - Background elements must not overlap or block the artwork
 - No additional wall art
 
 Layout:
-- Exactly NUMBER identical frames
+- Exactly Number identical frames
 - All frames same size and style
 - Perfect horizontal alignment
 - Even spacing between frames
@@ -478,7 +693,7 @@ Layout:
 - No resizing differences
 
 Frame:
-- Modern thin frame (something that compliments the art)
+- Modern thin frame that complements the artwork
 - Realistic depth and subtle shadow
 - Matte finish, no glare
 
@@ -490,14 +705,14 @@ Placement:
 - No lens distortion affecting the artwork plane
 
 Lighting:
-- Cinematic room lighting
+- Cinematic room lighting appropriate to the Room Theme
 - Soft directional light creating subtle wall shadows
 - Artwork evenly lit and fully visible
 - No glare or reflection on artwork surface
 
 Composition:
 - Square (1:1) output
-- All NUMBER frames fully visible
+- All Number frames fully visible
 - Artwork set is the clear focal point
 - Dramatic but balanced editorial composition
 
@@ -508,11 +723,12 @@ Style:
 - No logos
 - No watermarks
 
-If more than NUMBER frames appear, or any frame is resized, tilted, duplicated, or distorted, regenerate the image.
-
+If more than Number frames appear, or any frame is resized, tilted, duplicated, or distorted, regenerate the image.
 )"
 
 	promptText := StrReplace(template, "NUMBER", imageCount)
+	promptText := StrReplace(promptText, "Number", imageCount)
+	promptText := StrReplace(promptText, "INSERT_THEME", roomTheme)
 
 	clipSaved := ClipboardAll()
 	try {
@@ -971,7 +1187,7 @@ If more than NUMBER frames appear, or any frame is tilted, resized, duplicated, 
 }
 
 ; Statement - Multi Piece - Staggered
-Gemini_StatementMultiStaggeredPrompt(imageCount := "") {
+Gemini_StatementMultiStaggeredPrompt(imageCount := "", roomTheme := "") {
 	if (imageCount = "") {
 		ib := InputBox("How many attached images should be referenced?", "Gemini Prompt", "w340 h140", "3")
 		if (ib.Result != "OK") {
@@ -986,11 +1202,25 @@ Gemini_StatementMultiStaggeredPrompt(imageCount := "") {
 		return false
 	}
 
+	if (roomTheme = "") {
+		themeIb := InputBox("Enter the room theme to insert into the prompt.", "Gemini Prompt", "w500 h140")
+		if (themeIb.Result != "OK") {
+			return false
+		}
+
+		roomTheme := Trim(themeIb.Value)
+	}
+
+	if (roomTheme = "") {
+		MsgBox("Please enter a room theme.", "Gemini Prompt", "Icon!")
+		return false
+	}
+
 	template := "
 (
-Use the NUMBER attached images as the exact artworks displayed in the frames.
+Use the Number attached images as the exact artworks displayed in the frames.
 
-Exactly NUMBER framed artworks must be shown.
+Exactly Number framed artworks must be shown.
 Do not add extra frames.
 Do not duplicate any artwork.
 Each artwork must appear once and only once.
@@ -1006,21 +1236,24 @@ Each artwork must remain completely unchanged:
 Preserve each artwork’s original aspect ratio exactly.
 Each frame opening must match its artwork’s exact proportions.
 
-Create a dramatic, high-impact statement-room mockup featuring the NUMBER artworks arranged in a staggered layout.
+Create a dramatic, high-impact statement-room mockup featuring the Number artworks arranged in a staggered layout.
 
 Inspiration:
 - Take inspiration from the artwork’s dreamy pastel tones and glowing highlights
 - The environment should amplify the mood without overpowering the artwork
 - The artwork must remain geometrically accurate
 
+Room Theme:
+INSERT_THEME
+
 Environment:
-- Loft, gallery-style room, or creative studio space
-- Expressive atmosphere (subtle texture, architectural depth)
+- The room design must clearly reflect the chosen Room Theme
+- Expressive atmosphere with architectural depth or layered textures
+- Background elements must not overlap or block the artwork
 - No additional wall art
-- Background elements must not overlap the artwork
 
 Layout:
-- Exactly NUMBER identical frames
+- Exactly Number identical frames
 - All frames same size and style
 - Center frame positioned slightly higher
 - Left and right frames positioned slightly lower
@@ -1034,7 +1267,7 @@ Staggering refers only to vertical placement.
 Do not tilt, rotate, resize, or distort any frame.
 
 Frame:
-- Modern thin frame (something that compliments the art)
+- Modern thin frame that complements the artwork
 - Realistic depth and subtle shadow
 - Matte finish, no glare
 
@@ -1046,16 +1279,16 @@ Placement:
 - No lens distortion affecting the artwork plane
 
 Lighting:
-- Cinematic room lighting
-- Directional lighting creating depth and mood
+- Cinematic lighting appropriate to the Room Theme
+- Directional light creating depth and drama
 - Artwork evenly lit and fully visible
 - No glare or reflection on artwork surface
 
 Composition:
 - Square (1:1) output
-- All NUMBER frames fully visible
+- All Number frames fully visible
 - Artwork set is the dominant focal point
-- Dramatic editorial interior composition
+- Dramatic editorial composition
 
 Style:
 - Ultra realistic editorial interior photography
@@ -1064,10 +1297,13 @@ Style:
 - No logos
 - No watermarks
 
-If more than NUMBER frames appear, or any frame is tilted, resized, duplicated, or distorted, regenerate the image.
+If more than Number frames appear, or any frame is tilted, resized, duplicated, or distorted, regenerate the image.
+
 )"
 
 	promptText := StrReplace(template, "NUMBER", imageCount)
+	promptText := StrReplace(promptText, "Number", imageCount)
+	promptText := StrReplace(promptText, "INSERT_THEME", roomTheme)
 
 	clipSaved := ClipboardAll()
 	try {
