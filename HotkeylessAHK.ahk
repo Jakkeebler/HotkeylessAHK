@@ -29,18 +29,18 @@ RunClient(serverPort, functionClassNames)
 
 class CustomFunctions {
 	; Original Functions
-    HelloWorld() {
-        MsgBox "Hello, World!"
-    }
+	HelloWorld() {
+		MsgBox "Hello, World!"
+	}
 
-    OpenExplorer() {
-        Run "explorer.exe"
-    }
+	OpenExplorer() {
+		Run "explorer.exe"
+	}
 
-    ; can be called using the URL "localhost:<serverPort>/send/FunctionWithParams?Hello,World"
-    FunctionWithParams(param1, param2) { 
-        MsgBox "Param1: " . param1 . "`nParam2: " . param2
-    }
+	; can be called using the URL "localhost:<serverPort>/send/FunctionWithParams?Hello,World"
+	FunctionWithParams(param1, param2) {
+		MsgBox "Param1: " . param1 . "`nParam2: " . param2
+	}
 
 	; Common Functions
 	KillAllScripts() {
@@ -56,12 +56,12 @@ class CustomFunctions {
 		Reload
 		return
 	}
-	
+
 	; Valhalla Functions ---------------------------------------------------------
 	Valhalla_HelloWorld2() {
 		HelloWorld2()
 	}
-	
+
 	; Valhalla - Work Functions --------------------------------------------------
 	Valhalla_EndWork() {
 		EndWork()
@@ -82,10 +82,47 @@ class CustomFunctions {
 	}
 
 	; Gemini - Prompts -----------------------------------------------------------
+	; Multi Piece - Aligned ------------------------------------------------------
 	Gemini_HeroMultiAligned(imageCount := "") {
 		return Gemini_HeroMultiAlignedPrompt(imageCount)
 	}
 
+	Gemini_RoomMultiAligned(imageCount := "") {
+		return Gemini_RoomMultiAlignedPrompt(imageCount)
+	}
+
+	Gemini_OfficeMultiAligned(imageCount := "") {
+		return Gemini_OfficeMultiAlignedPrompt(imageCount)
+	}
+
+	Gemini_LivingMultiAligned(imageCount := "") {
+		return Gemini_LivingMultiAlignedPrompt(imageCount)
+	}
+
+	Gemini_StatementMultiAligned(imageCount := "") {
+		return Gemini_StatementMultiAlignedPrompt(imageCount)
+	}
+
+	; Multi Piece - Staggered ---------------------------------------------------
+	Gemini_HeroMultiStaggered(imageCount := "") {
+		return Gemini_HeroMultiStaggeredPrompt(imageCount)
+	}
+
+	Gemini_RoomMultiStaggered(imageCount := "") {
+		return Gemini_RoomMultiStaggeredPrompt(imageCount)
+	}
+
+	Gemini_OfficeMultiStaggered(imageCount := "") {
+		return Gemini_OfficeMultiStaggeredPrompt(imageCount)
+	}
+
+	Gemini_LivingMultiStaggered(imageCount := "") {
+		return Gemini_LivingMultiStaggeredPrompt(imageCount)
+	}
+
+	Gemini_StatementMultiStaggered(imageCount := "") {
+		return Gemini_StatementMultiStaggeredPrompt(imageCount)
+	}
 }
 
 
