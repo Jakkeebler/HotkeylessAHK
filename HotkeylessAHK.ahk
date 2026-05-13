@@ -89,6 +89,22 @@ class CustomFunctions {
 		Action_CodexApprove()
 	}
 
+	Valhalla_PanicMute() {
+		PanicMute()
+	}
+
+	Valhalla_PanicUnmute() {
+		PanicUnmute()
+	}
+
+	Valhalla_MarkVivaldiPrivate() {
+		MarkVivaldiPrivate()
+	}
+
+	Valhalla_UnmarkVivaldiPrivate() {
+		UnmarkVivaldiPrivate()
+	}
+
 	; Gemini - Prompts -----------------------------------------------------------
 	; Single Piece - Aligned -----------------------------------------------------
 	Gemini_Statement18x24(roomTheme := "") {
