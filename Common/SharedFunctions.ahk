@@ -1,3 +1,43 @@
+GetCurrentFolderPath() {
+    ; Windows Explorer — COM-based, reads path directly from the active window
+    if ProcessExist("explorer.exe") {
+        shell := ComObject("Shell.Application")
+        for window in shell.Windows() {
+            try {
+                if WinActive("ahk_id " window.HWND) {
+                    return window.Document.Folder.Self.Path
+                }
+            }
+        }
+    }
+
+    ; OneCommander — clipboard-based (Ctrl+L focuses address bar, then copy)
+    if ProcessExist("OneCommander.exe") {
+        for hwnd in WinGetList("ahk_exe OneCommander.exe") {
+            if WinActive("ahk_id " hwnd) {
+                savedClip := A_Clipboard
+                A_Clipboard := ""
+                Send "^l"
+                Sleep 80
+                Send "^a"
+                Sleep 50
+                Send "^c"
+                ClipWait 1
+                path := (A_Clipboard != "") ? Trim(A_Clipboard) : ""
+                A_Clipboard := savedClip
+                return path
+            }
+        }
+    }
+
+    return ""
+}
+
+OpenFolderInVSCode(folderPath) {
+    ; Route through cmd so VS Code's .cmd shim is found on PATH
+    Run A_ComSpec ' /c code --new-window "' . folderPath . '"',, "Hide"
+}
+
 CloseAppByProcess(processName) {
     hwnds := WinGetList("ahk_exe " processName)
     for hwnd in hwnds {

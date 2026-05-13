@@ -57,6 +57,14 @@ class CustomFunctions {
 		return
 	}
 
+	OpenInVSCode(folderPath := "") {
+		if (folderPath = "")
+			folderPath := GetCurrentFolderPath()
+		if (folderPath = "")
+			return
+		OpenFolderInVSCode(folderPath)
+	}
+
 	; Valhalla Functions ---------------------------------------------------------
 	Valhalla_HelloWorld2() {
 		HelloWorld2()
