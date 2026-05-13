@@ -105,6 +105,19 @@ class CustomFunctions {
 		UnmarkVivaldiPrivate()
 	}
 
+	; Valhalla - App Launchers ---------------------------------------------------
+	Valhalla_HotkeylessAHK_Start() {
+		HotkeylessAHK_Start()
+	}
+
+	Valhalla_BookwyrmScribe_Start() {
+		BookwyrmScribe_Start()
+	}
+
+	Valhalla_BookwyrmHoard_Start() {
+		BookwyrmHoard_Start()
+	}
+
 	; Gemini - Prompts -----------------------------------------------------------
 	; Single Piece - Aligned -----------------------------------------------------
 	Gemini_Statement18x24(roomTheme := "") {

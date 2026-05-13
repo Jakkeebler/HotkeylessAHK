@@ -38,6 +38,19 @@ OpenFolderInVSCode(folderPath) {
     Run A_ComSpec ' /c code --new-window "' . folderPath . '"',, "Hide"
 }
 
+OpenFolderInOneCommander(folderPath) {
+    try {
+        Run 'OneCommander.exe "' folderPath '"'
+        return
+    }
+    installPath := EnvGet("LOCALAPPDATA") "\OneCommander\OneCommander.exe"
+    if FileExist(installPath) {
+        Run '"' installPath '" "' folderPath '"'
+        return
+    }
+    Run 'explorer.exe "' folderPath '"'
+}
+
 CloseAppByProcess(processName) {
     hwnds := WinGetList("ahk_exe " processName)
     for hwnd in hwnds {
