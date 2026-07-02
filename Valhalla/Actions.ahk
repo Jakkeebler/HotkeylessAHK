@@ -118,6 +118,38 @@ OpenRepo_BookwyrmScribe() {
     FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Apps\Books\Bookwyrm Scribe - NodeJS")
 }
 
+OpenRepo_BookwyrmCollector() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Apps\Books\Bookwyrm Collector")
+}
+
+OpenRepo_BookwyrmHoard() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Apps\Books\Bookwyrm Hoard - NextJS")
+}
+
+OpenRepo_BookwyrmWheel() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Apps\Books\Bookwyrm Wheel")
+}
+
+OpenRepo_PlexMoviePicker() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Apps\Plex Movie Picker - AI")
+}
+
+OpenRepo_BusinessDashboard() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Apps\Business Dashbord")
+}
+
+OpenRepo_LivingDexTracker() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\LivingDex-Labs\V0-LivingDex-AI")
+}
+
+OpenRepo_PokeHub() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\PokeHub")
+}
+
+OpenRepo_ShowdownBot() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\Showdown Bot")
+}
+
 VivaldiPrivateHwnds() {
     static hwnds := Map()
     return hwnds

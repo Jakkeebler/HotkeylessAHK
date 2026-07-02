@@ -109,6 +109,38 @@ class CustomFunctions {
 		OpenRepo_BookwyrmScribe()
 	}
 
+	Valhalla_OpenRepo_BookwyrmCollector() {
+		OpenRepo_BookwyrmCollector()
+	}
+
+	Valhalla_OpenRepo_BookwyrmHoard() {
+		OpenRepo_BookwyrmHoard()
+	}
+
+	Valhalla_OpenRepo_BookwyrmWheel() {
+		OpenRepo_BookwyrmWheel()
+	}
+
+	Valhalla_OpenRepo_PlexMoviePicker() {
+		OpenRepo_PlexMoviePicker()
+	}
+
+	Valhalla_OpenRepo_BusinessDashboard() {
+		OpenRepo_BusinessDashboard()
+	}
+
+	Valhalla_OpenRepo_LivingDexTracker() {
+		OpenRepo_LivingDexTracker()
+	}
+
+	Valhalla_OpenRepo_PokeHub() {
+		OpenRepo_PokeHub()
+	}
+
+	Valhalla_OpenRepo_ShowdownBot() {
+		OpenRepo_ShowdownBot()
+	}
+
 	; Valhalla - App Launchers ---------------------------------------------------
 	Valhalla_HotkeylessAHK_Start() {
 		HotkeylessAHK_Start()
