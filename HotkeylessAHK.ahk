@@ -105,6 +105,10 @@ class CustomFunctions {
 		UnmarkVivaldiPrivate()
 	}
 
+	Valhalla_OpenRepo_BookwyrmScribe() {
+		OpenRepo_BookwyrmScribe()
+	}
+
 	; Valhalla - App Launchers ---------------------------------------------------
 	Valhalla_HotkeylessAHK_Start() {
 		HotkeylessAHK_Start()

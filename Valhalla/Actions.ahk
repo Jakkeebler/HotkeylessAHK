@@ -92,6 +92,32 @@ UnmarkVivaldiPrivate() {
     }
 }
 
+; Focus the VS Code window that has repoPath open, or open a new one if none has it.
+; Match is by folder name in the window title (VS Code titles: "file - folder - Visual Studio Code").
+FocusOrOpenRepoInVSCode(repoPath) {
+    if !DirExist(repoPath) {
+        ShowPanicTooltip("Repo not found: " repoPath)
+        return
+    }
+
+    SplitPath(repoPath, &folderName)
+
+    for hwnd in WinGetList("ahk_exe Code.exe") {
+        if InStr(WinGetTitle("ahk_id " hwnd), folderName) {
+            if (WinGetMinMax("ahk_id " hwnd) = -1)
+                WinRestore("ahk_id " hwnd)
+            WinActivate("ahk_id " hwnd)
+            return
+        }
+    }
+
+    OpenFolderInVSCode(repoPath)
+}
+
+OpenRepo_BookwyrmScribe() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Apps\Books\Bookwyrm Scribe - NodeJS")
+}
+
 VivaldiPrivateHwnds() {
     static hwnds := Map()
     return hwnds
