@@ -142,8 +142,16 @@ OpenRepo_LivingDexTracker() {
     FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\LivingDex-Labs\V0-LivingDex-AI")
 }
 
-OpenRepo_PokeHub() {
-    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\PokeHub")
+OpenRepo_PokeHubVGC() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\PokeHub-VGC")
+}
+
+OpenRepo_PokeHubTCG() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\PokeHub-TCG")
+}
+
+OpenRepo_PokeHubSleep() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\PokeHub-Sleep")
 }
 
 OpenRepo_ShowdownBot() {

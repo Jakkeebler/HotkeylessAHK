@@ -133,8 +133,16 @@ class CustomFunctions {
 		OpenRepo_LivingDexTracker()
 	}
 
-	Valhalla_OpenRepo_PokeHub() {
-		OpenRepo_PokeHub()
+	Valhalla_OpenRepo_PokeHubVGC() {
+		OpenRepo_PokeHubVGC()
+	}
+
+	Valhalla_OpenRepo_PokeHubTCG() {
+		OpenRepo_PokeHubTCG()
+	}
+
+	Valhalla_OpenRepo_PokeHubSleep() {
+		OpenRepo_PokeHubSleep()
 	}
 
 	Valhalla_OpenRepo_ShowdownBot() {
