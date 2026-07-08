@@ -149,6 +149,18 @@ class CustomFunctions {
 		OpenRepo_ShowdownBot()
 	}
 
+	Valhalla_OpenRepo_PortfolioSite() {
+		OpenRepo_PortfolioSite()
+	}
+
+	Valhalla_OpenRepo_HotkeylessAHK() {
+		OpenRepo_HotkeylessAHK()
+	}
+
+	Valhalla_OpenRepo_BaseAutoHotkey() {
+		OpenRepo_BaseAutoHotkey()
+	}
+
 	; Valhalla - App Launchers ---------------------------------------------------
 	Valhalla_HotkeylessAHK_Start() {
 		HotkeylessAHK_Start()

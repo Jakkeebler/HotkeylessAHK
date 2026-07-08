@@ -158,6 +158,18 @@ OpenRepo_ShowdownBot() {
     FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\Showdown Bot")
 }
 
+OpenRepo_PortfolioSite() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Websites\Portfolios Site")
+}
+
+OpenRepo_HotkeylessAHK() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Automation\HotkeylessAHK")
+}
+
+OpenRepo_BaseAutoHotkey() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Automation\AutoHotkey")
+}
+
 VivaldiPrivateHwnds() {
     static hwnds := Map()
     return hwnds
