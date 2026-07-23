@@ -138,20 +138,24 @@ OpenRepo_BusinessDashboard() {
     FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Apps\Business Dashbord")
 }
 
-OpenRepo_LivingDexTracker() {
-    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\LivingDex-Labs\V0-LivingDex-AI")
+OpenRepo_PokeHubDex() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\PokeHub\PokeHub-Dex")
 }
 
 OpenRepo_PokeHubVGC() {
-    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\PokeHub-VGC")
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\PokeHub\PokeHub-VGC")
 }
 
 OpenRepo_PokeHubTCG() {
-    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\PokeHub-TCG")
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\PokeHub\PokeHub-TCG")
 }
 
 OpenRepo_PokeHubSleep() {
-    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\PokeHub-Sleep")
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\PokeHub\PokeHub-Sleep")
+}
+
+OpenRepo_PokeHubCharacter() {
+    FocusOrOpenRepoInVSCode("C:\Users\Jeron\Documents\Programming\Pokemon\PokeHub\PokeHub-Character")
 }
 
 OpenRepo_ShowdownBot() {

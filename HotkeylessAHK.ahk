@@ -129,8 +129,8 @@ class CustomFunctions {
 		OpenRepo_BusinessDashboard()
 	}
 
-	Valhalla_OpenRepo_LivingDexTracker() {
-		OpenRepo_LivingDexTracker()
+	Valhalla_OpenRepo_PokeHubDex() {
+		OpenRepo_PokeHubDex()
 	}
 
 	Valhalla_OpenRepo_PokeHubVGC() {
@@ -143,6 +143,10 @@ class CustomFunctions {
 
 	Valhalla_OpenRepo_PokeHubSleep() {
 		OpenRepo_PokeHubSleep()
+	}
+
+	Valhalla_OpenRepo_PokeHubCharacter() {
+		OpenRepo_PokeHubCharacter()
 	}
 
 	Valhalla_OpenRepo_ShowdownBot() {
